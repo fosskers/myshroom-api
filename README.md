@@ -12,9 +12,8 @@ This file is a place where we can jot down notes for future reference. Here, one
 - Write Scala API, interwork with Imgur API for image uploads **COLIN**
   - Become familiar with Imgur API **NIMA**
 - Find mushroom pictures + name + info **NIMA**
+  - Create database from specific collections on ImageNet
   - Contact mycological societies for access to their info **NIMA**
-  - List of societies that have been contacted:
-    - N/A
 - Learn **Caffe** and its python interface **OMAR + JESSE**
 - Produce the official model once images and tags are collected
 - Write Django server to serve JSON on top of X labels and confidence values based given image **OMAR + JESSE + NIMA**
@@ -27,8 +26,8 @@ This file is a place where we can jot down notes for future reference. Here, one
 
 # Useful Links
 
-## **If you haven't already, sign up for the [GitHub education pack](https://education.github.com/)!**
-### This pack includes credit for DigitalOcean and Amazon Web Services
+## If you haven't already, sign up for the [GitHub education pack](https://education.github.com/)
+This pack includes credit for DigitalOcean and Amazon Web Services
 
 ## Cloud Computing Resources (with pros & cons)
 
@@ -52,6 +51,7 @@ This file is a place where we can jot down notes for future reference. Here, one
 
 ## Mushroom Picture and Info Databases
 
+- ImageNet
 - [Mushroom Source](http://www.mushroomsource.com/mushrooms.html)
 - [MycoKey](http://www.mycokey.com/newMycoKeySite/MycoKeyIdentQuick.html)
 - [Roger Mushrooms](http://www.rogersmushrooms.com/)
