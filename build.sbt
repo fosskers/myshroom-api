@@ -1,10 +1,11 @@
 name := """myshroom-api"""
 
-version := "1.0-SNAPSHOT"
+// Semantic Version
+version := "1.0.0"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   jdbc,
