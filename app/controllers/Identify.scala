@@ -2,34 +2,29 @@ package controllers
 
 // PLAY
 import play.api._
-import play.api.mvc._
 import play.api.libs.json._
+import play.api.libs.ws._
+import play.api.mvc._
+import play.api.Play.current
 
 // OTHER
 import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 // --- //
 
 class Identify extends Controller {
-  private val djangoJson: String => JsValue = url => Json.obj(
-    "source"  -> url,
-    "results" -> Json.arr(
-      Json.obj("label" -> "Fly Agaric", "confidence" -> 0.8),
-      Json.obj("label" -> "Destroying Angel", "confidence" -> 0.15),
-      Json.obj("label" -> "Oyster", "confidence" -> 0.05)
-    )
-  )
 
   private val confidentJ: String => JsValue = url => Json.obj(
     "source" -> url,
     "status" -> "CONFIDENT",
     "result" -> Json.obj(
-      "latin"   -> "Amanita muscaria",
-      "variety" -> "muscaria",  // There are others.
-      "common"  -> Json.arr("Fly Agaric", "Fly Amanita"),
-      "poisonous" -> true,
+      "latin"        -> "Amanita muscaria",
+      "variety"      -> "muscaria",  // There are others.
+      "common"       -> Json.arr("Fly Agaric", "Fly Amanita"),
+      "poisonous"    -> true,
       "psychoactive" -> true,
-      "habitat" -> "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere."
+      "habitat"      -> "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere."
     )
   )
 
@@ -39,6 +34,12 @@ class Identify extends Controller {
    * the data. For now, we return some place-holder JSON.
    */
   def fromURL(url: String) = Action.async {
-    Future.successful(Ok(confidentJ(url)))
+
+    val resp = WS.url("http://localhost:8000/identify")
+      .withHeaders("Accept" -> "application/json")
+      .withRequestTimeout(5000)  // 5 seconds
+      .withQueryString("identify" -> url)
+
+    resp.get.map(r => Ok(r.json))
   }
 }
