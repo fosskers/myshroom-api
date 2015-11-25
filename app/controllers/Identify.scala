@@ -8,12 +8,13 @@ import play.api.mvc._
 import play.api.Play.current
 
 // OTHER
+import javax.inject.Inject;
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 // --- //
 
-class Identify extends Controller {
+class Identify @Inject() (ws: WSClient) extends Controller {
 
   private val confidentJ: String => JsValue = url => Json.obj(
     "source" -> url,
@@ -28,18 +29,18 @@ class Identify extends Controller {
     )
   )
 
-  /* 2015 November 23 @ 21:45
-   * In future, this will accept label and confidence value pairs
-   * from the Neural Network server, and decide how to interpret
-   * the data. For now, we return some place-holder JSON.
+  /* 2015 November 25 @ 15:11
+   * At the moment, this expects some server returning nice JSON to be
+   * running on Port 8000. The `shroom-vision-dummy` server does this,
+   * but produces random results, so that this interaction can be tested.
    */
   def fromURL(url: String) = Action.async {
 
-    val resp = WS.url("http://localhost:8000/identify")
+    val call = ws.url("http://localhost:8000/identify")
       .withHeaders("Accept" -> "application/json")
       .withRequestTimeout(5000)  // 5 seconds
-      .withQueryString("identify" -> url)
+      .withQueryString("url" -> url)
 
-    resp.get.map(r => Ok(r.json))
+    call.get.map(r => Ok(r.json))
   }
 }
