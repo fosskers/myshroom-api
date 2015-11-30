@@ -16,7 +16,7 @@ import scala.concurrent.Future
 
 // --- //
 
-class Identify @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
+class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
 
   /*
   private val confidentJ: String => JsValue = url => Json.obj(
