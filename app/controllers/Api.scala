@@ -45,7 +45,9 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       .withRequestTimeout(5000) // 5 seconds
       .withQueryString("url" -> url)
 
-    call.get.map(r => Ok(r.json))
+    call.get.map(r => Ok(r.json)).recover({
+      case e: Throwable => InternalServerError
+    })
   }
 
   def byLatin(latin: String) = Action.async {
