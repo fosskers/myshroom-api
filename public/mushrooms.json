@@ -1,0 +1,11 @@
+[
+    {
+        "latin": "Amanita muscaria",
+        "common": ["Fly agaric", "Fly amanita"],
+        "poisonous": true,
+        "psychoactive": true,
+        "regions": ["Worldwide"],
+        "confusedWith": ["Amanita caesarea"],
+        "habitat": "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere."
+    }
+]
