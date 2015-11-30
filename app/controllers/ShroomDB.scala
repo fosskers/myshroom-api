@@ -20,14 +20,14 @@ import scala.concurrent.Future
 // --- //
 
 class ShroomDB @Inject() (val reactiveMongoApi: ReactiveMongoApi)
-    extends Controller with MongoController with ReactiveMongoComponents {
+  extends Controller with MongoController with ReactiveMongoComponents {
 
   def collection: JSONCollection = db.collection[JSONCollection]("shrooms")
 
   /* There should only ever be one result, as Latin names are unique */
   def byLatin(latin: String): Future[Option[Mushroom]] = {
     collection.find(Json.obj("latin" -> latin))
-      .cursor[Mushroom](readPreference=nearest)
+      .cursor[Mushroom](readPreference = nearest)
       .headOption
   }
 }

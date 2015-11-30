@@ -1,15 +1,22 @@
 package controllers
 
-import javax.inject.Inject
+// PLAY
 import play.api.Play.current
 import play.api.libs.ws._
 import play.api.mvc._
+import play.api.libs.json.Json
+
+// LOCAL
+import models.Mushrooms._
+
+// OTHER
+import javax.inject.Inject
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 // --- //
 
-class Identify @Inject() (ws: WSClient) extends Controller {
+class Identify @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
 
   /*
   private val confidentJ: String => JsValue = url => Json.obj(
@@ -31,7 +38,7 @@ class Identify @Inject() (ws: WSClient) extends Controller {
    * running on Port 8000. The `shroom-vision-dummy` server does this,
    * but produces random results, so that this interaction can be tested.
    */
-  def fromURL(url: String) = Action.async {
+  def byURL(url: String) = Action.async {
 
     val call = ws.url("http://localhost:8000/identify")
       .withHeaders("Accept" -> "application/json")
@@ -39,5 +46,12 @@ class Identify @Inject() (ws: WSClient) extends Controller {
       .withQueryString("url" -> url)
 
     call.get.map(r => Ok(r.json))
+  }
+
+  def byLatin(latin: String) = Action.async {
+    db.byLatin(latin).map({
+      case None => Ok(Json.obj("error" -> s"Invalid Latin name: ${latin}"))
+      case Some(s) => Ok(Json.toJson(s))
+    })
   }
 }
