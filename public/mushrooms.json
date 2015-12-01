@@ -13,7 +13,7 @@
             "cap": ["flat", "convex"],
             "hymenium": ["free"],
             "sporePrint": ["white"],
-            "ecology": "mycorrhizal"
+            "ecology": ["mycorrhizal"]
         }
     },
     {
@@ -30,7 +30,7 @@
             "cap": ["convex"],
             "hymenium": ["free"],
             "sporePrint": ["brown", "black-brown"],
-            "ecology": "saprotrophic"
+            "ecology": ["saprotrophic"]
         }
     },
     {
@@ -47,7 +47,7 @@
             "cap": ["convex", "flat"],
             "hymenium": ["free"],
             "sporePrint": ["brown"],
-            "ecology": "saprotrophic"
+            "ecology": ["saprotrophic"]
         }
     },
     {
@@ -64,7 +64,7 @@
             "cap": ["convex", "flat"],
             "hymenium": ["adnate", "subdecurrent"],
             "sporePrint": ["white"],
-            "ecology": "parasitic"
+            "ecology": ["parasitic"]
         }
     },
     {
@@ -81,7 +81,76 @@
             "cap": ["convex"],
             "hymenium": ["adnexed"],
             "sporePrint": ["white"],
-            "ecology": "saprotrophic"
+            "ecology": ["saprotrophic"]
         }
     },
+    {
+        "latin": "Grifola frondosa",
+        "common": ["hen-of-the-woods", "Ram's head", "Sheep's head"],
+        "confusedWith": ["Laetiporus sulphureus"],
+        "regions": ["North America", "Japan"],
+        "habitat": "Grows on living hardwoods (especially oaks) and occasionally on conifers",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["offset", "indistinct"],
+            "hymenium": ["decurrent"],
+            "sporePrint": ["white"],
+            "ecology": ["parasitic"]
+        }
+    },
+    {
+        "latin": "Gyromitra esculenta",
+        "common": ["beefsteak morel", "Lorchel"],
+        "confusedWith": [],
+        "regions": ["Scandinavia", "Eastern Europe", "Upper Great Lakes of North America"],
+        "habitat": "Gyromitra esculenta grows on sandy soil in Temperate coniferous forest and occasionally in deciduous woodlands. Among conifers it is mostly found under pines , but also sometimes under aspen",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": true,
+            "cap": ["convex"],
+            "hymenium": ["irregular"],
+            "sporePrint": ["yellow", "buff"],
+            "ecology": ["saprotrophic", "mycorrihizal"]
+        }
+    },
+    {
+        "latin": "Morchella esculenta",
+        "common": ["Morel", "Morel Yellow", "True Morel", "Morel Mushroom", "Sponge Morel"],
+        "confusedWith": ["Morel Crassipes"],
+        "regions": ["Asia", "Europe", "North America", "Africa"],
+        "habitat": "Calcareous or nutrient-rich soil, sometimes amongst woodchips or on fire sites, often in disturbed areas. Also in woodland, evidently mycorrhizal with pine, spruce and other conifers at some stage of the lifecycle.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["conical", "convex"],
+            "hymenium": ["irregular"],
+            "sporePrint": ["yellow", "cream"],
+            "ecology": ["mycorrhizal", "saprotrophic"]
+        }
+    },
+    {
+        "latin": "Pleurotus ostreatus",
+        "common": ["Oyster Mushroom", "Oyster Shelf", "Tree Oyster"],
+        "confusedWith": [],
+        "regions": ["Asia", "Europe", "South America", "Africa", "North America"],
+        "habitat": "Pleurotus ostreatus is found from mid Fall to mid December and seems to prefer sugar maple and occasionally beech, or other hardwoods.  These are likely to be on living mature trees with obvious signs they are on the way out or occasionally on dead wood. They can be very high in the tree and grow in enormous numbers.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["offset"],
+            "hymenium": ["decurrent"],
+            "sporePrint": ["white"],
+            "ecology": ["saprotrophic"]
+        }
+    },
+
 ]
