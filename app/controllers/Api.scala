@@ -55,6 +55,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   }
 
   def byLatin(latin: String) = Action.async {
+
     db.byLatin(latin).map({
       case None => Ok(Json.obj("error" -> s"Invalid Latin name: ${latin}"))
       case Some(s) => Ok(Json.toJson(s))
@@ -62,6 +63,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   }
 
   def find(poison: Boolean, psycho: Boolean) = Action.async {
+
     val poi: (String, JsValueWrapper) = "poisonous" -> poison
     val psy: (String, JsValueWrapper) = "psychoactive" -> psycho
 
