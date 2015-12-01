@@ -11,7 +11,7 @@
             "poisonous": true,
             "deadly": false,
             "cap": ["flat", "convex"],
-            "hymenium": "free",
+            "hymenium": ["free"],
             "sporePrint": ["white"],
             "ecology": "mycorrhizal"
         }
@@ -28,9 +28,60 @@
             "poisonous": false,
             "deadly": false,
             "cap": ["convex"],
-            "hymenium": "free",
+            "hymenium": ["free"],
             "sporePrint": ["brown", "black-brown"],
             "ecology": "saprotrophic"
         }
-    }
+    },
+    {
+        "latin": "Agaricus campestris",
+        "common": ["Field Mushroom", "Meadow Mushroom"],
+        "confusedWith": ["Amanita bisporigera"],
+        "regions": ["Asia", "Europe", "Northern Africa", "Australia", "New Zealand", "North America"],
+        "habitat": "Common in fields and grassy areas after rain from late summer onwards worldwide. It is often found on lawns in suburban areas",
+        "fairyRings": true,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["convex", "flat"],
+            "hymenium": ["free"],
+            "sporePrint": ["brown"],
+            "ecology": "saprotrophic"
+        }
+    },
+    {
+        "latin": "Armillaria mellea",
+        "common": ["Honey fungus"],
+        "confusedWith": [],
+        "regions": ["Northern Asia", "Europe", "North America", "South Africa"],
+        "habitat": "Armillaria mellea is widespread in northern temperate zones. The fungus grows parasitically on a large number of broadleaf trees. It fruits in dense clusters at the base of trunks or stumps.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["convex", "flat"],
+            "hymenium": ["adnate", "subdecurrent"],
+            "sporePrint": ["white"],
+            "ecology": "parasitic"
+        }
+    },
+    {
+        "latin": "Flammulina Velutipes",
+        "common": ["Enokitake", "Enokidake", "Golden Needle Mushroom", "Lily Mushroom"],
+        "confusedWith": [],
+        "regions": ["Asia", "Europe", "North America"],
+        "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree ("enoki" in Japanese), but also on other trees, such as mulberry and persimmon trees",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["convex"],
+            "hymenium": ["adnexed"],
+            "sporePrint": ["white"],
+            "ecology": "saprotrophic"
+        }
+    },
 ]
