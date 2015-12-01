@@ -2,8 +2,7 @@ package controllers
 
 // PLAY
 import play.api.Play.current
-import play.api.libs.json.Json
-import play.api.libs.json.Json.JsValueWrapper
+import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
 
@@ -24,14 +23,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   private val confidentJ: String => JsValue = url => Json.obj(
     "source" -> url,
     "status" -> "CONFIDENT",
-    "result" -> Json.obj(
-      "latin" -> "Amanita muscaria",
-      "variety" -> "muscaria", // There are others.
-      "common" -> Json.arr("Fly Agaric", "Fly Amanita"),
-      "poisonous" -> true,
-      "psychoactive" -> true,
-      "habitat" -> "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere."
-    )
+    "result" -> Json.obj( ... json from DB ...)
   )
    */
 
@@ -62,17 +54,24 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
     })
   }
 
-  def find(poison: Boolean, psycho: Boolean) = Action.async {
+  def find(
+    psycho: Option[Boolean],
+    poison: Option[Boolean],
+    deadly: Option[Boolean]
+  ) = Action.async {
 
-    val poi: (String, JsValueWrapper) = "poisonous" -> poison
-    val psy: (String, JsValueWrapper) = "psychoactive" -> psycho
+    val pairs = Seq(
+      ("attributes.psychoactive", psycho),
+      ("attributes.poisonous", poison),
+      ("attributes.deadly", deadly)
+    )
 
-    val query: Future[Seq[Mushroom]] = (poison, psycho) match {
-      case (true, false) => db.jsonQuery(Json.obj(poi))
-      case (false, true) => db.jsonQuery(Json.obj(psy))
-      case _ => db.jsonQuery(Json.obj(poi, psy))
-    }
+    val zero: Seq[(String, JsValue)] = Seq()
+    val params = pairs.foldRight(zero)({
+      case ((_,None), acc) => acc
+      case ((s,Some(b)), acc) => (s -> JsBoolean(b)) +: acc
+    })
 
-    query.map(shrooms => Ok(Json.toJson(shrooms)))
+    db.jsonQuery(JsObject(params)).map(shrooms => Ok(Json.toJson(shrooms)))
   }
 }
