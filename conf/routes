@@ -10,3 +10,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /identify                   controllers.Api.byURL(url: String)
 GET     /latin                      controllers.Api.byLatin(latin: String)
+GET     /find                       controllers.Api.find(poison: Boolean ?= false, psycho: Boolean ?= false)

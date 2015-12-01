@@ -2,11 +2,13 @@ package controllers
 
 // PLAY
 import play.api.Play.current
+import play.api.libs.json.Json
+import play.api.libs.json.Json.JsValueWrapper
 import play.api.libs.ws._
 import play.api.mvc._
-import play.api.libs.json.Json
 
 // LOCAL
+import models.Mushroom
 import models.Mushrooms._
 
 // OTHER
@@ -46,7 +48,9 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       .withQueryString("url" -> url)
 
     call.get.map(r => Ok(r.json)).recover({
-      case e: Throwable => InternalServerError
+      case e: Throwable => InternalServerError(
+        Json.obj("error" -> "Couldn't access mushroom identification server.")
+      )
     })
   }
 
@@ -55,5 +59,18 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       case None => Ok(Json.obj("error" -> s"Invalid Latin name: ${latin}"))
       case Some(s) => Ok(Json.toJson(s))
     })
+  }
+
+  def find(poison: Boolean, psycho: Boolean) = Action.async {
+    val poi: (String, JsValueWrapper) = "poisonous" -> poison
+    val psy: (String, JsValueWrapper) = "psychoactive" -> psycho
+
+    val query: Future[Seq[Mushroom]] = (poison, psycho) match {
+      case (true, false) => db.jsonQuery(Json.obj(poi))
+      case (false, true) => db.jsonQuery(Json.obj(psy))
+      case _ => db.jsonQuery(Json.obj(poi, psy))
+    }
+
+    query.map(shrooms => Ok(Json.toJson(shrooms)))
   }
 }

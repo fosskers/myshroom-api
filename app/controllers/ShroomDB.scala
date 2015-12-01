@@ -24,10 +24,14 @@ class ShroomDB @Inject() (val reactiveMongoApi: ReactiveMongoApi)
 
   def collection: JSONCollection = db.collection[JSONCollection]("shrooms")
 
+  def jsonQuery(json: JsObject): Future[Seq[Mushroom]] = {
+    collection.find(json)
+      .cursor[Mushroom](readPreference = nearest)
+      .collect[Seq]()
+  }
+
   /* There should only ever be one result, as Latin names are unique */
   def byLatin(latin: String): Future[Option[Mushroom]] = {
-    collection.find(Json.obj("latin" -> latin))
-      .cursor[Mushroom](readPreference = nearest)
-      .headOption
+    collection.find(Json.obj("latin" -> latin)).one[Mushroom]
   }
 }
