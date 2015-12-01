@@ -6,6 +6,15 @@
         "psychoactive": true,
         "regions": ["Worldwide"],
         "confusedWith": ["Amanita caesarea"],
-        "habitat": "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere."
+        "habitat": "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere. It forms symbiotic relationships with many trees, including pine, spruce, fir, birch, and cedar."
+    },
+    {
+        "latin": "Agaricus arvensis",
+        "common": ["Horse mushroom"],
+        "poisonous": false,
+        "psychoactive": false,
+        "regions": ["Britain", "Iran", "North America"],
+        "confusedWith": ["Amanita"],
+        "habitat": "Appearing during the months of July-November, it is frequently found near stables, as well as in meadows. It may form fairy rings, and is often found growing with nettles. It is sometimes found associated with spruce."
     }
 ]
