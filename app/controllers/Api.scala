@@ -5,6 +5,7 @@ import play.api.Play.current
 import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
+import play.api.libs.concurrent.Execution.Implicits._
 
 // LOCAL
 import models.Mushroom
@@ -12,8 +13,7 @@ import models.Mushrooms._
 
 // OTHER
 import javax.inject.Inject
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 
 // --- //
 
@@ -25,6 +25,12 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
     "status" -> "CONFIDENT",
     "result" -> Json.obj( ... json from DB ...)
   )
+   */
+
+  /* VALUES:
+   * CONFIDENT
+   * LIKELY
+   * ...?
    */
 
   /* 2015 November 25 @ 15:11

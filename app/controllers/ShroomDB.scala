@@ -1,7 +1,6 @@
 package controllers
 
 // PLAY
-import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.libs.json._
 import play.api.mvc.Controller
 import play.modules.reactivemongo._
@@ -15,7 +14,7 @@ import models.Mushrooms._
 // OTHER
 import javax.inject.Inject
 import reactivemongo.api.ReadPreference._
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 
 // --- //
 
@@ -24,14 +23,14 @@ class ShroomDB @Inject() (val reactiveMongoApi: ReactiveMongoApi)
 
   def collection: JSONCollection = db.collection[JSONCollection]("shrooms")
 
-  def jsonQuery(json: JsObject): Future[Seq[Mushroom]] = {
+  def jsonQuery(json: JsObject)(implicit ec: ExecutionContext): Future[Seq[Mushroom]] = {
     collection.find(json)
       .cursor[Mushroom](readPreference = nearest)
       .collect[Seq]()
   }
 
   /* There should only ever be one result, as Latin names are unique */
-  def byLatin(latin: String): Future[Option[Mushroom]] = {
+  def byLatin(latin: String)(implicit ec: ExecutionContext): Future[Option[Mushroom]] = {
     collection.find(Json.obj("latin" -> latin)).one[Mushroom]
   }
 }
