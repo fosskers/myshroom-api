@@ -72,7 +72,7 @@
         "common": ["Enokitake", "Enokidake", "Golden Needle Mushroom", "Lily Mushroom"],
         "confusedWith": [],
         "regions": ["Asia", "Europe", "North America"],
-        "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree ("enoki" in Japanese), but also on other trees, such as mulberry and persimmon trees",
+        "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree (enoki in Japanese), but also on other trees, such as mulberry and persimmon trees",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
