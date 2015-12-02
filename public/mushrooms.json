@@ -152,5 +152,56 @@
             "ecology": ["saprotrophic"]
         }
     },
+    {
+        "latin": "Pluteus cervinus",
+        "common": ["deer shield", "deer fawn mushroom"],
+        "confusedWith": [],
+        "regions": ["North America"],
+        "habitat": "Pluteus cervinus is usually a woodland species, and is not generally found on woodchips in urban areas. It can be found fruiting on very rotten logs almost any time of the year except when it's too cold or snow is on the ground.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["flat"],
+            "hymenium": ["free"],
+            "sporePrint": ["salmon", "reddish-brown"],
+            "ecology": ["saprotrophic"]
+        }
+    },
+    {
+        "latin": "Tremella fuciformis",
+        "common": ["snow fungus", "silver ear fungus", "white jelly mushroom"],
+        "confusedWith": [],
+        "regions": ["Asia", "North America", "South America", "Central America", "Caribbeain", "Australia", "New Zealand", "Pacific Islands"],
+        "habitat": "Pluteus cervinus is usually a woodland species, and is not generally found on woodchips in urban areas. It can be found fruiting on very rotten logs almost any time of the year except when it's too cold or snow is on the ground.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": [""],
+            "hymenium": [""],
+            "sporePrint": ["white"],
+            "ecology": ["saprotrophic"]
+        }
+    },
+    {
+        "latin": "Volvariella volvacea",
+        "common": ["paddy straw mushroom", "straw mushroom"],
+        "confusedWith": ["Amanita phalloides"],
+        "regions": ["Asia", "North America"],
+        "habitat": "Grows well between 28 and 35°C. It is a fast growing mushroom compared with most other cultivated mushrooms",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["conical", "umbonate"],
+            "hymenium": ["free"],
+            "sporePrint": ["salmon"],
+            "ecology": ["saprotrophic"]
+        }
+    }
 
 ]
