@@ -199,7 +199,7 @@
             "deadly": false,
             "cap": ["conical", "umbonate"],
             "hymenium": ["free"],
-            "sporePrint": ["salmon"],
+            "sporePrint": ["salmon", "pink"],
             "ecology": ["saprotrophic"]
         }
     }
