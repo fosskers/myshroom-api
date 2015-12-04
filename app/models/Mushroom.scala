@@ -20,9 +20,9 @@ case class Attributes(
   poisonous: Boolean,
   deadly: Boolean,
   cap: Seq[String],
-  hymenium: String,
+  hymenium: Seq[String],
   sporePrint: Seq[String],
-  ecology: String
+  ecology: Seq[String]
 )
 
 object Mushrooms {
