@@ -242,7 +242,7 @@
         "common": ["chanterelle", "golden chanterelle", "girolle"],
         "confusedWith": ["Hygrophoropsis aurantiaca"],
         "regions": ["Europe", "North America", "Asia"],
-        "habitat": "They can grow in both uplands and lowlands and can often be found in "washes" or along trail edges and country dirt roads with mixed woods and a lot of shade.",
+        "habitat": "They can grow in both uplands and lowlands and can often be found in washes or along trail edges and country dirt roads with mixed woods and a lot of shade.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
