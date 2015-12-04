@@ -35,7 +35,7 @@
     },
     {
         "latin": "Agaricus campestris",
-        "common": ["Field Mushroom", "Meadow Mushroom"],
+        "common": ["Field mushroom", "Meadow mushroom"],
         "confusedWith": ["Amanita bisporigera"],
         "regions": ["Asia", "Europe", "Northern Africa", "Australia", "New Zealand", "North America"],
         "habitat": "Common in fields and grassy areas after rain from late summer onwards worldwide. It is often found on lawns in suburban areas",
@@ -68,11 +68,11 @@
         }
     },
     {
-        "latin": "Flammulina Velutipes",
-        "common": ["Enokitake", "Enokidake", "Golden Needle Mushroom", "Lily Mushroom"],
+        "latin": "Flammulina velutipes",
+        "common": ["Enoki", "Enokitake", "Enokidake", "Golden needle mushroom", "Lily mushroom"],
         "confusedWith": [],
         "regions": ["Asia", "Europe", "North America"],
-        "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree (enoki in Japanese), but also on other trees, such as mulberry and persimmon trees",
+        "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree, but also on other trees, such as mulberry and persimmon trees.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -86,10 +86,10 @@
     },
     {
         "latin": "Grifola frondosa",
-        "common": ["hen-of-the-woods", "Ram's head", "Sheep's head"],
+        "common": ["Hen-of-the-woods", "Ram's head", "Sheep's head"],
         "confusedWith": ["Laetiporus sulphureus"],
         "regions": ["North America", "Japan"],
-        "habitat": "Grows on living hardwoods (especially oaks) and occasionally on conifers",
+        "habitat": "Grows on living hardwoods (especially oaks) and occasionally on conifers.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -103,10 +103,10 @@
     },
     {
         "latin": "Gyromitra esculenta",
-        "common": ["beefsteak morel", "Lorchel"],
+        "common": ["Beefsteak morel", "Lorchel"],
         "confusedWith": [],
         "regions": ["Scandinavia", "Eastern Europe", "Upper Great Lakes of North America"],
-        "habitat": "Gyromitra esculenta grows on sandy soil in Temperate coniferous forest and occasionally in deciduous woodlands. Among conifers it is mostly found under pines , but also sometimes under aspen",
+        "habitat": "Grows on sandy soil in temperate coniferous forest and occasionally in deciduous woodlands. Among conifers it is mostly found under pines , but also sometimes under aspen.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -120,10 +120,10 @@
     },
     {
         "latin": "Morchella esculenta",
-        "common": ["Morel", "Morel Yellow", "True Morel", "Morel Mushroom", "Sponge Morel"],
-        "confusedWith": ["Morel Crassipes"],
+        "common": ["Morel", "Morel yellow", "True Morel", "Morel mushroom", "Sponge morel"],
+        "confusedWith": ["Morel crassipes"],
         "regions": ["Asia", "Europe", "North America", "Africa"],
-        "habitat": "Calcareous or nutrient-rich soil, sometimes amongst woodchips or on fire sites, often in disturbed areas. Also in woodland, evidently mycorrhizal with pine, spruce and other conifers at some stage of the lifecycle.",
+        "habitat": "Grows in calcareous or nutrient-rich soil, sometimes amongst woodchips or on fire sites, often in disturbed areas. Also in woodland, evidently mycorrhizal with pine, spruce and other conifers at some stage of the lifecycle.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -137,10 +137,10 @@
     },
     {
         "latin": "Pleurotus ostreatus",
-        "common": ["Oyster Mushroom", "Oyster Shelf", "Tree Oyster"],
+        "common": ["Oyster mushroom", "Oyster shelf", "Tree oyster"],
         "confusedWith": [],
         "regions": ["Asia", "Europe", "South America", "Africa", "North America"],
-        "habitat": "Pleurotus ostreatus is found from mid Fall to mid December and seems to prefer sugar maple and occasionally beech, or other hardwoods.  These are likely to be on living mature trees with obvious signs they are on the way out or occasionally on dead wood. They can be very high in the tree and grow in enormous numbers.",
+        "habitat": "Found from mid Fall to mid December and seems to prefer sugar maple and occasionally beech, or other hardwoods.  These are likely to be on living mature trees with obvious signs they are on the way out or occasionally on dead wood. They can be very high in the tree and grow in enormous numbers.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -154,10 +154,10 @@
     },
     {
         "latin": "Pluteus cervinus",
-        "common": ["deer shield", "deer fawn mushroom"],
+        "common": ["Deer shield", "Deer fawn mushroom"],
         "confusedWith": [],
         "regions": ["North America"],
-        "habitat": "Pluteus cervinus is usually a woodland species, and is not generally found on woodchips in urban areas. It can be found fruiting on very rotten logs almost any time of the year except when it's too cold or snow is on the ground.",
+        "habitat": "Usually a woodland species, and is not generally found on woodchips in urban areas. It can be found fruiting on very rotten logs almost any time of the year except when it's too cold or snow is on the ground.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -171,24 +171,24 @@
     },
     {
         "latin": "Tremella fuciformis",
-        "common": ["snow fungus", "silver ear fungus", "white jelly mushroom"],
+        "common": ["Snow fungus", "Silver ear fungus", "White jelly mushroom"],
         "confusedWith": [],
         "regions": ["Asia", "North America", "South America", "Central America", "Caribbeain", "Australia", "New Zealand", "Pacific Islands"],
-        "habitat": "Pluteus cervinus is usually a woodland species, and is not generally found on woodchips in urban areas. It can be found fruiting on very rotten logs almost any time of the year except when it's too cold or snow is on the ground.",
+        "habitat": "Following its host, fruit bodies are typically found on dead, attached or recently fallen branches of broadleaf trees.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
             "poisonous": false,
             "deadly": false,
-            "cap": [""],
-            "hymenium": [""],
+            "cap": [],
+            "hymenium": [],
             "sporePrint": ["white"],
             "ecology": ["saprotrophic"]
         }
     },
     {
         "latin": "Volvariella volvacea",
-        "common": ["paddy straw mushroom", "straw mushroom"],
+        "common": ["Paddy straw mushroom", "Straw mushroom"],
         "confusedWith": ["Amanita phalloides"],
         "regions": ["Asia", "North America"],
         "habitat": "Grows well between 28 and 35°C. It is a fast growing mushroom compared with most other cultivated mushrooms",
@@ -203,12 +203,12 @@
             "ecology": ["saprotrophic"]
         }
     },
-        {
+    {
         "latin": "Lentinula edodes",
-        "common": ["Sawtooth oak mushroom", "black forest mushroom", "black mushroom", "golden oak mushroom", "oakwood mushroom"],
-        "confusedWith": [""],
+        "common": ["Sawtooth oak mushroom", "Black forest mushroom", "Black mushroom", "Golden oak mushroom", "Oakwood mushroom"],
+        "confusedWith": [],
         "regions": ["East Asia"],
-        "habitat": "Shiitake mushrooms grow in groups on the decaying wood of deciduous trees, particularly shii, chestnut, oak, maple, beech, sweetgum, poplar, hornbeam, ironwood, mulberry, and chinquapin",
+        "habitat": "Shiitake mushrooms grow in groups on the decaying wood of deciduous trees, particularly shii, chestnut, oak, maple, beech, sweetgum, poplar, hornbeam, ironwood, mulberry, and chinquapin.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -220,7 +220,7 @@
             "ecology": ["saprotrophic"]
         }
     },
-        {
+    {
         "latin": "Amanita phalloides",
         "common": ["Death cap"],
         "confusedWith": ["Amanita caesarea", "Volvariella volvacea"],
@@ -237,9 +237,9 @@
             "ecology": ["mycorrhizal"]
         }
     },
-        {
+    {
         "latin": "Cantharellus cibarius",
-        "common": ["chanterelle", "golden chanterelle", "girolle"],
+        "common": ["Chanterelle", "Golden chanterelle", "Girolle"],
         "confusedWith": ["Hygrophoropsis aurantiaca"],
         "regions": ["Europe", "North America", "Asia"],
         "habitat": "They can grow in both uplands and lowlands and can often be found in washes or along trail edges and country dirt roads with mixed woods and a lot of shade.",
@@ -254,9 +254,9 @@
             "ecology": ["mycorrhizal"]
         }
     },
-        {
+    {
         "latin": "Hericium erinaceus",
-        "common": ["Lion's Mane Mushroom", "Bearded Tooth Mushroom", "Satyr's Beard", "Bearded Hedgehog Mushroom", "pom pom mushroom", "Bearded Tooth Fungus"],
+        "common": ["Lion's Mane Mushroom", "Bearded tooth mushroom", "Satyr's Beard", "Bearded hedgehog mushroom", "Pom pom mushroom", "Bearded tooth fungus"],
         "confusedWith": ["Hygrophoropsis aurantiaca"],
         "regions": ["Europe", "North America", "Asia"],
         "habitat": "It appears on hardwoods and its tendency to grow a single clump of dangling spines.",
@@ -265,35 +265,18 @@
             "psychoactive": false,
             "poisonous": false,
             "deadly": false,
-            "cap": [""],
+            "cap": [],
             "hymenium": ["decurrent"],
-            "sporePrint": ["yellow", "cream"],
-            "ecology": ["mycorrhizal"]
-        }
-    },
-        {
-        "latin": "Hericium erinaceus",
-        "common": ["Lion's Mane Mushroom", "Bearded Tooth Mushroom", "Satyr's Beard", "Bearded Hedgehog Mushroom", "pom pom mushroom", "Bearded Tooth Fungus"],
-        "confusedWith": ["Hygrophoropsis aurantiaca"],
-        "regions": ["Europe", "North America", "Asia"],
-        "habitat": "It appears on hardwoods and its tendency to grow a single clump of dangling spines.",
-        "fairyRings": false,
-        "attributes": {
-            "psychoactive": false,
-            "poisonous": false,
-            "deadly": false,
-            "cap": [""],
-            "hymenium": [""],
             "sporePrint": ["white"],
             "ecology": ["parasitic"]
         }
     },
-        {
+    {
         "latin": "Lactarius vinaceorufescens",
-        "common": ["Cinnamon Cap", "Brick top", "yellow-staining milkcap", "yellow-latex milky"],
+        "common": ["Cinnamon Cap", "Brick top", "Yellow-staining milkcap", "Yellow-latex milky"],
         "confusedWith": ["Lactarius xanthogalactus"],
         "regions": ["North America"],
-        "habitat": "The fruit bodies of Lactarius vinaceorufescens grow scattered or in groups on the ground under pine between August and October. The species is known to develop mycorrhizal associations with Douglas fir.",
+        "habitat": "Grows scattered or in groups on the ground under pine between August and October. The species is known to develop mycorrhizal associations with Douglas fir.",
         "fairyRings": false,
         "attributes": {
             "psychoactive": false,
@@ -305,6 +288,4 @@
             "ecology": ["mycorrhizal"]
         }
     }
-
-
 ]
