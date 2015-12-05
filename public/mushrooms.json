@@ -238,23 +238,7 @@
             "ecology": ["mycorrhizal"]
         }
     },
-        {
-        "latin": "Hericium erinaceus",
-        "common": ["Lion's Mane Mushroom", "Bearded Tooth Mushroom", "Satyr's Beard", "Bearded Hedgehog Mushroom", "pom pom mushroom", "Bearded Tooth Fungus"],
-        "confusedWith": ["Hygrophoropsis aurantiaca"],
-        "regions": ["Europe", "North America", "Asia"],
-        "habitat": "It appears on hardwoods and its tendency to grow a single clump of dangling spines.",
-        "fairyRings": false,
-        "attributes": {
-            "psychoactive": false,
-            "poisonous": false,
-            "deadly": false,
-            "cap": [""],
-            "hymenium": ["decurrent"],
-            "sporePrint": ["yellow", "cream"],
-            "ecology": ["mycorrhizal"]
-        }
-    },
+
         {
         "latin": "Hericium erinaceus",
         "common": ["Lion's Mane Mushroom", "Bearded Tooth Mushroom", "Satyr's Beard", "Bearded Hedgehog Mushroom", "pom pom mushroom", "Bearded Tooth Fungus"],
