@@ -186,23 +186,7 @@
             "ecology": ["saprotrophic"]
         }
     },
-    {
-        "latin": "Volvariella volvacea",
-        "common": ["paddy straw mushroom", "straw mushroom"],
-        "confusedWith": ["Amanita phalloides"],
-        "regions": ["Asia", "North America"],
-        "habitat": "Grows well between 28 and 35°C. It is a fast growing mushroom compared with most other cultivated mushrooms",
-        "fairyRings": false,
-        "attributes": {
-            "psychoactive": false,
-            "poisonous": false,
-            "deadly": false,
-            "cap": ["conical", "umbonate"],
-            "hymenium": ["free"],
-            "sporePrint": ["salmon", "pink"],
-            "ecology": ["saprotrophic"]
-        }
-    },
+,
         {
         "latin": "Lentinula edodes",
         "common": ["Sawtooth oak mushroom", "black forest mushroom", "black mushroom", "golden oak mushroom", "oakwood mushroom"],
@@ -304,7 +288,57 @@
             "sporePrint": ["white", "yellow"],
             "ecology": ["mycorrhizal"]
         }
+    },
+        {
+        "latin": "Coprinus comatus",
+        "common": ["Shaggy ink cap", "Lawyer's wig", "Shaggy mane"],
+        "confusedWith": ["Coprinopsis picacea"],
+        "regions": ["Europe", "North America", "Australia", "New Zealand"],
+        "habitat": "Often seen growing on lawns, along gravel roads and waste areas. The young fruit bodies first appear as white cylinders emerging from the ground, then the bell-shaped caps open out.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["conical"],
+            "hymenium": ["free"],
+            "sporePrint": ["Black"],
+            "ecology": ["saprotrophic"]
+        }
+    },
+        {
+        "latin": "Lactarius deliciosus",
+        "common": ["saffron milk cap", "red pine mushroom"],
+        "confusedWith": ["Lactarius rubrilacteus"],
+        "regions": ["Europe", "North America", "Australia", "New Zealand"],
+        "habitat": "Lactarius deliciosus grows under conifers on acidic soils and forms a mycorrhizal relationship with its host tree. It is native to the southern Pyrenees where it grows under Mediterranean pines, as well as throughout the Mediterranean basin.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["depressed"],
+            "hymenium": ["decurrent"],
+            "sporePrint": ["tan"],
+            "ecology": ["mycorrhizal"]
+        }
+    },
+            {
+        "latin": "Hericium americanum",
+        "common": ["bear's head tooth fungus"],
+        "confusedWith": ["Hericium erinaceus"],
+        "regions": ["North America", "Europe"],
+        "habitat": "Hericium Americanum has long spines and a branched fruiting body. It is apparently found only east of the Great Plains, fruiting from dead wood or live trees. Though it is more frequently found on hardwoods, it is documented on conifers.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": [""],
+            "hymenium": [""],
+            "sporePrint": ["white"],
+            "ecology": ["Saprobic", "parasitic"]
+        }
     }
-
 
 ]
