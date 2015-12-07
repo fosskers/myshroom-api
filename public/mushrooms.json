@@ -205,7 +205,7 @@
     },
     {
         "latin": "Lentinula edodes",
-        "common": ["Sawtooth oak mushroom", "Black forest mushroom", "Black mushroom", "Golden oak mushroom", "Oakwood mushroom"],
+        "common": ["Shiitake", "Sawtooth oak mushroom", "Black forest mushroom", "Black mushroom", "Golden oak mushroom", "Oakwood mushroom"],
         "confusedWith": [],
         "regions": ["East Asia"],
         "habitat": "Shiitake mushrooms grow in groups on the decaying wood of deciduous trees, particularly shii, chestnut, oak, maple, beech, sweetgum, poplar, hornbeam, ironwood, mulberry, and chinquapin.",
@@ -320,6 +320,23 @@
             "hymenium": ["decurrent"],
             "sporePrint": ["tan"],
             "ecology": ["mycorrhizal"]
+        }
+    },
+    {
+        "latin": "Coprinus comatus",
+        "common": ["Shaggy ink cap", "Lawyer's wig", "Shaggy Mane"],
+        "confusedWith": ["Coprinopsis picacea"],
+        "regions": ["Europe", "North America"],
+        "habitat": "Grows in groups in places which are often unexpected, such as green areas in towns. ",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["conical"],
+            "hymenium": ["free"],
+            "sporePrint": ["black"],
+            "ecology": ["saprotrophic"]
         }
     }
 ]
