@@ -76,8 +76,9 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       val sorted = shrooms.sortWith(_._2 > _._2)
 
       val status = sorted.head._2 match {
-        case con if con > 0.9 => ("CONFIDENT", con)
-        case con if con > 0.75 => ("LIKELY", con)
+        case con if con > 0.95 => ("CONFIDENT", con)
+        case con if con > 0.80 => ("LIKELY", con)
+        case con if con > 0.65 => ("MAYBE", con)
         case con => ("UNSURE", con)
       }
 
