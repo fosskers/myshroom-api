@@ -7,7 +7,7 @@ Our model was based off of AlexNet, and was trained with
 
 # TO-DO list
 
-## Tasks
+## Initial Tasks
 
 - [x] Write Scala API
 - [x] Find mushroom pictures + name + info **NIMA**
@@ -18,10 +18,22 @@ Our model was based off of AlexNet, and was trained with
 - ~~Write Django server to serve JSON on top of X labels and confidence values based given image~~
 - [x] Report + Poster (in LaTeX) **OMAR**
 
-## End Goals
+## Next Steps
 
-- [ ] At demo day, be able to identify a mushroom chosen from a Google search
-- [ ] At demo day, be able to identify a speciment of a mushroom, *LIVE*
+- [ ] Website Extensions
+  - [ ] Extend `find` call to include all parameter types
+  - [ ] On success, redirect to nice page
+  - [ ] Include reprentative images of all shrooms in `/public/images`
+  - [ ] Sexy deployment (`supervisor`? `lemons`?)
+  - [ ] Migration to Haskell
+    - [ ] Go through Parallel/Concurrency book
+    - [ ] Look into `servant` library
+    - [ ] Write new server to mimick the Scala
+- [ ] NeuralNet Revamp
+  - [ ] Research and choose new ML stack (TensorFlow?)
+  - [ ] Train model with new stack
+  - [ ] Create server in ML lib's host language to serve JSON
+  - [ ] Tweak API server to access this
 
 # Resources
 
