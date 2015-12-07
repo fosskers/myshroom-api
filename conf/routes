@@ -9,5 +9,7 @@ GET     /                           controllers.Application.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /identify                   controllers.Api.byURL(url: String)
+POST    /identify                   controllers.Api.fromForm
+
 GET     /latin                      controllers.Api.byLatin(latin: String)
 GET     /find                       controllers.Api.find(psycho: Option[Boolean], poison: Option[Boolean], deadly: Option[Boolean])

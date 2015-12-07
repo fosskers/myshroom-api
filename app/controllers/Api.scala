@@ -2,14 +2,17 @@ package controllers
 
 // PLAY
 import play.api.Play.current
+import play.api.data.Forms._
+import play.api.data._
+import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
-import play.api.libs.concurrent.Execution.Implicits._
 
 // LOCAL
 import models.Mushroom
 import models.Mushrooms._
+import utils.Constraints._
 
 // OTHER
 import javax.inject.Inject
@@ -19,13 +22,31 @@ import scala.concurrent.Future
 
 class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
 
+  case class ShroomURL(url: String)
+
+  private val urlForm = Form(mapping(
+    "url" -> text.verifying(validUrl)
+  )(ShroomURL.apply)(ShroomURL.unapply))
+
+  def fromForm = Action.async { implicit request =>
+    urlForm.bindFromRequest.fold(
+      formWithErrors => Future.successful(
+        BadRequest.flashing("err" -> "Please give a valid URL")
+      ),
+      url => callNet(url.url)
+    )
+  }
+
   /* 2015 November 25 @ 15:11
    * At the moment, this expects some server returning nice JSON to be
    * running on Port 8000. The `shroom-vision-dummy` server does this,
    * but produces random results, so that this interaction can be tested.
    */
   def byURL(url: String) = Action.async {
+    callNet(url)
+  }
 
+  private def callNet(url: String): Future[Result] = {
     val call = ws.url("http://localhost:8000/identify")
       .withHeaders("Accept" -> "application/json")
       .withRequestTimeout(5000) // 5 seconds
