@@ -287,5 +287,22 @@
             "sporePrint": ["white", "yellow"],
             "ecology": ["mycorrhizal"]
         }
+    },
+    {
+        "latin": "Amanita regalis",
+        "common": ["Royal fly agaric", "King of Sweden Amanita"],
+        "confusedWith": ["Amanita muscaria"],
+        "regions": ["Scandinavia", "Europe", "Alaska"],
+        "habitat": "A rare species typically found growing on the ground in mountainous forests, both deciduous and coniferous.",
+        "fairyRings": true,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": true,
+            "deadly": false,
+            "cap": ["convex", "flat"],
+            "hymenium": ["free"],
+            "sporePrint": ["white"],
+            "ecology": ["mycorrhizal"]
+        }
     }
 ]
