@@ -15,11 +15,12 @@ import models.Mushrooms._
 // OTHER
 import javax.inject.Inject
 import scala.concurrent.Future
+import scala.concurrent.blocking
+import scala.sys.process._
 
 // --- //
 
 class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
-
 
   def fromForm = Action.async { implicit request =>
     urlForm.bindFromRequest.fold(
@@ -39,24 +40,26 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
     callNet(url)
   }
 
+  /* 2015 December  6 @ 20:32
+   * `godScript` downloads the given image via `wget`, then runs a myriad
+   * of other shell scripts to interact with the Caffe model and return
+   * nicely formatted JSON.
+   */
   private def callNet(url: String): Future[Result] = {
-    val call = ws.url("http://localhost:8000/identify")
-      .withHeaders("Accept" -> "application/json")
-      .withRequestTimeout(5000) // 5 seconds
-      .withQueryString("url" -> url)
+    try {
+      val json = Json.parse(blocking(s"godScript ${url}".!!))
 
-    call.get.flatMap({ r =>
-      val names: Seq[String] = (r.json \\ "label").map(_.as[String])
-      val confs: Seq[Float] = (r.json \\ "confidence").map(_.as[Float])
+      val names: Seq[String] = (json \\ "label").map(_.as[String])
+      val confs: Seq[Float] = (json \\ "confidence").map(_.as[Float])
 
       db.byLatins(names).map({ shrooms =>
         Ok(sanitize(url, shrooms.zip(confs)))
       })
-    }).recover({
-      case e: Throwable => InternalServerError(
-        Json.obj("error" -> "Couldn't access mushroom identification server.")
-      )
-    })
+    } catch {
+      case e: Throwable => Future.successful(InternalServerError(
+        Json.obj("error" -> "Error processing results from Neural Net.")
+      ))
+    }
   }
 
   /* Produce sanitized results that the user can appreciate */
