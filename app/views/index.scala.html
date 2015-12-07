@@ -1,13 +1,24 @@
-@(message: String)
+@(urlF: Form[String])(implicit messages: Messages)
 
 @main("MyShroom - Identify a Mushroom Image") {
 
 <div>
   <div style="margin-left:auto;margin-right:auto;width:420px;height:420px;">
     <img src="@routes.Assets.versioned("images/icon.png")">
+
+    @helper.form(action = routes.Api.fromForm()) {
+    <div class="input-group">
+      <input type="text" name="url" class="form-control">
+
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-success">
+            Identify
+          </button>
+        </span>
+      </div>
+    }
+    
   </div>
 </div>
-
-
 
 }

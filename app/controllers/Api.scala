@@ -2,17 +2,15 @@ package controllers
 
 // PLAY
 import play.api.Play.current
-import play.api.data.Forms._
-import play.api.data._
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
 
 // LOCAL
+import extra.Forms._
 import models.Mushroom
 import models.Mushrooms._
-import utils.Constraints._
 
 // OTHER
 import javax.inject.Inject
@@ -22,18 +20,13 @@ import scala.concurrent.Future
 
 class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
 
-  case class ShroomURL(url: String)
-
-  private val urlForm = Form(mapping(
-    "url" -> text.verifying(validUrl)
-  )(ShroomURL.apply)(ShroomURL.unapply))
 
   def fromForm = Action.async { implicit request =>
     urlForm.bindFromRequest.fold(
       formWithErrors => Future.successful(
         BadRequest.flashing("err" -> "Please give a valid URL")
       ),
-      url => callNet(url.url)
+      url => callNet(url)
     )
   }
 
