@@ -24,7 +24,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   def fromForm = Action.async { implicit request =>
     urlForm.bindFromRequest.fold(
       formWithErrors => Future.successful(
-        BadRequest.flashing("err" -> "Please give a valid URL")
+        BadRequest(Json.obj("error" -> "Bad image url!"))
       ),
       url => callNet(url)
     )
