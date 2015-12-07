@@ -304,5 +304,22 @@
             "sporePrint": ["white"],
             "ecology": ["mycorrhizal"]
         }
+    },
+    {
+        "latin": "Lactarius deliciosus",
+        "common": ["Saffron milk cap", "Red pine mushroom"],
+        "confusedWith": [],
+        "regions": ["Europe"],
+        "habitat": "Grows under conifers on acidic soils and forms a mycorrhizal relationship with its host tree.",
+        "fairyRings": false,
+        "attributes": {
+            "psychoactive": false,
+            "poisonous": false,
+            "deadly": false,
+            "cap": ["depressed"],
+            "hymenium": ["decurrent"],
+            "sporePrint": ["tan"],
+            "ecology": ["mycorrhizal"]
+        }
     }
 ]
