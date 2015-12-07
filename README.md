@@ -1,53 +1,33 @@
-INFO
-====
+MyShroom
+========
 
-What *is* this?
----------------
-This file is a place where we can jot down notes for future reference. Here, one can find our current TO-DO list, info on best practices, links to relevant papers, libraries, forum posts, and sources, and more.
+MyShroom is a mushroom identification system that uses Neural Networks.
+Our model was based off of AlexNet, and was trained with
+[caffe](http://caffe.berkeleyvision.org/).
 
-# Current TO-DO list
+# TO-DO list
 
 ## Tasks
 
-- Write Scala API, interwork with Imgur API for image uploads **COLIN**
-  - Become familiar with Imgur API **NIMA**
-- Find mushroom pictures + name + info **NIMA**
-  - Create database from specific collections on ImageNet
-  - Contact mycological societies for access to their info **NIMA**
-- Learn **Caffe** and its python interface **OMAR + JESSE**
-- Produce the official model once images and tags are collected
-- Write Django server to serve JSON on top of X labels and confidence values based given image **OMAR + JESSE + NIMA**
-- Report + Poster (in LaTeX)
+- [x] Write Scala API
+- [x] Find mushroom pictures + name + info **NIMA**
+  - [x] Create database from specific collections on ImageNet
+  - [ ] Contact mycological societies for access to their info **NIMA**
+- [x] Learn **Caffe** and its python interface **OMAR + JESSE**
+- [x] Produce the official model once images and tags are collected
+- ~~Write Django server to serve JSON on top of X labels and confidence values based given image~~
+- [x] Report + Poster (in LaTeX) **OMAR**
 
 ## End Goals
 
-- At demo day, be able to identify a mushroom chosen from a Google search
-- At demo day, be able to identify a speciment of a mushroom, *LIVE*
+- [ ] At demo day, be able to identify a mushroom chosen from a Google search
+- [ ] At demo day, be able to identify a speciment of a mushroom, *LIVE*
 
-# Useful Links
-
-## If you haven't already, sign up for the [GitHub education pack](https://education.github.com/)
-This pack includes credit for DigitalOcean and Amazon Web Services
-
-## Cloud Computing Resources (with pros & cons)
-
-- [Amazon Web Services](https://aws.amazon.com/)
-- [DigitalOcean](https://www.digitalocean.com/)
-
-## Image Hosting Resources (with pros & cons)
-
-- [Imgur API Documentation](https://api.imgur.com/)
-- [Amazon S3](https://aws.amazon.com/s3/)
+# Resources
 
 ## Papers
 
 - [Mushroom Recognition - Damien Matti](http://mmspg.epfl.ch/files/content/sites/mmspl/files/shared/Semesterproject_mushroomrecognition.pdf)
-
-## Dummy JSON Generators
-
-- http://www.json-generator.com/
-- http://www.jsontest.com/
-- http://jsonplaceholder.typicode.com/
 
 ## Mushroom Picture and Info Databases
 
@@ -64,18 +44,3 @@ This pack includes credit for DigitalOcean and Amazon Web Services
 - [Vancouver Mycological Society](http://www.vanmyco.com/)
 - [Alberta Mycologocial Society](http://www.wildmushrooms.ws/)
 - [Mycological Society of America](http://msafungi.org/)
-
-## Cheat Sheets!
-
-### Git Cheat Sheets
-
-- [Git - The Simple Guide](http://rogerdudler.github.io/git-guide/)
-
-### Markdown Cheat Sheets
-
-- [Cheat Sheet by Adam P.](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [Daring Fireball documentation](https://daringfireball.net/projects/markdown/syntax)
-
-### Editor Cheat Sheets
-
-- [Vim Reference Card](http://tnerual.eriogerg.free.fr/vimqrc.html)
