@@ -34,6 +34,9 @@ Our model was based off of AlexNet, and was trained with
   - [ ] Train model with new stack
   - [ ] Create server in ML lib's host language to serve JSON
   - [ ] Tweak API server to access this
+- [ ] Misc.
+  - [ ] Image rights?
+  - [ ] Contact Mycological societies about what they would find useful
 
 # Resources
 
