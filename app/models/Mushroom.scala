@@ -25,8 +25,22 @@ case class Attributes(
   ecology: Seq[String]
 )
 
+case class IdResults(
+  source: String,
+  status: IdStatus,
+  result: Option[Mushroom],
+  warnings: Seq[String]
+)
+
+case class IdStatus(
+  label: String,
+  confidence: Float
+)
+
 object Mushrooms {
-  /* Automatic conversion from JSON */
+  /* Automatic conversion to and from JSON */
   implicit val attributesFormat = Json.format[Attributes]
   implicit val mushroomFormat = Json.format[Mushroom]
+  implicit val idStatusFormat = Json.format[IdStatus]
+  implicit val resultsFormat = Json.format[IdResults]
 }

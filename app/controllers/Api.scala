@@ -9,7 +9,7 @@ import play.api.mvc._
 
 // LOCAL
 import extra.Forms._
-import models.Mushroom
+import models._
 import models.Mushrooms._
 
 // OTHER
@@ -53,7 +53,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       val confs: Seq[Float] = (json \\ "confidence").map(_.as[Float])
 
       db.byLatins(names).map({ shrooms =>
-        Ok(sanitize(url, shrooms.zip(confs)))
+        Ok(Json.toJson(sanitize(url, shrooms.zip(confs))))
       })
     } catch {
       case e: Throwable => Future.successful(InternalServerError(
@@ -66,14 +66,8 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   private def sanitize(
     url: String,
     shrooms: Seq[(Mushroom, Float)]
-  ): JsValue = shrooms match {
-    case Seq() =>
-      Json.obj(
-        "source" -> url,
-        "status" -> Json.obj("label" -> "ERROR", "confidence" -> 1),
-        "result" -> Json.obj(),
-        "warnings" -> Json.arr()
-      )
+  ): IdResults = shrooms match {
+    case Seq() => IdResults(url, IdStatus("ERROR", 1), None, Seq())
     case _ => {
       /* Sorted by descending confidence value */
       val sorted = shrooms.sortWith(_._2 > _._2)
@@ -102,11 +96,8 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
         }
       }
 
-      Json.obj(
-        "source" -> url,
-        "status" -> Json.obj("label" -> status._1, "confidence" -> status._2),
-        "result" -> Json.toJson(sorted.head._1),
-        "warnings" -> warnings
+      IdResults(
+        url, IdStatus(status._1, status._2), Some(sorted.head._1), warnings
       )
     }
   }
