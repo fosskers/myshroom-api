@@ -27,7 +27,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       formWithErrors => Future.successful(
         BadRequest(Json.obj("error" -> "Bad image url!"))
       ),
-      url => callNet(url)
+      url => sanitizedCall(url)
     )
   }
 
@@ -37,7 +37,16 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
    * but produces random results, so that this interaction can be tested.
    */
   def byURL(url: String) = Action.async {
-    callNet(url)
+    sanitizedCall(url)
+  }
+
+  private def sanitizedCall(url: String): Future[Result] = {
+    callNet(url).map({
+      case None => InternalServerError(
+        Json.obj("error" -> "Error processing results from Neural Net.")
+      )
+      case Some(r) => Ok(Json.toJson(r))
+    })
   }
 
   /* 2015 December  6 @ 20:32
@@ -45,7 +54,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
    * of other shell scripts to interact with the Caffe model and return
    * nicely formatted JSON.
    */
-  private def callNet(url: String): Future[Result] = {
+  private def callNet(url: String): Future[Option[IdResult]] = {
     try {
       val json = Json.parse(blocking(s"godScript ${url}".!!))
 
@@ -53,12 +62,10 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
       val confs: Seq[Float] = (json \\ "confidence").map(_.as[Float])
 
       db.byLatins(names).map({ shrooms =>
-        Ok(Json.toJson(sanitize(url, shrooms.zip(confs))))
+        Some(sanitize(url, shrooms.zip(confs)))
       })
     } catch {
-      case e: Throwable => Future.successful(InternalServerError(
-        Json.obj("error" -> "Error processing results from Neural Net.")
-      ))
+      case e: Throwable => Future.successful(None)
     }
   }
 
@@ -66,8 +73,8 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
   private def sanitize(
     url: String,
     shrooms: Seq[(Mushroom, Float)]
-  ): IdResults = shrooms match {
-    case Seq() => IdResults(url, IdStatus("ERROR", 1), None, Seq())
+  ): IdResult = shrooms match {
+    case Seq() => IdResult(url, IdStatus("ERROR", 1), None, Seq())
     case _ => {
       /* Sorted by descending confidence value */
       val sorted = shrooms.sortWith(_._2 > _._2)
@@ -96,7 +103,7 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
         }
       }
 
-      IdResults(
+      IdResult(
         url, IdStatus(status._1, status._2), Some(sorted.head._1), warnings
       )
     }

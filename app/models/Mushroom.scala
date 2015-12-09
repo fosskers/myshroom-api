@@ -25,7 +25,7 @@ case class Attributes(
   ecology: Seq[String]
 )
 
-case class IdResults(
+case class IdResult(
   source: String,
   status: IdStatus,
   result: Option[Mushroom],
@@ -42,5 +42,5 @@ object Mushrooms {
   implicit val attributesFormat = Json.format[Attributes]
   implicit val mushroomFormat = Json.format[Mushroom]
   implicit val idStatusFormat = Json.format[IdStatus]
-  implicit val resultsFormat = Json.format[IdResults]
+  implicit val idResultFormat = Json.format[IdResult]
 }
