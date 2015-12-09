@@ -1,0 +1,112 @@
+@(url: String, r: Option[IdResult])(implicit messages: Messages)
+
+@main("MyShroom - Identification Result") {
+  <div style="margin-left:auto;margin-right:auto;width:420px;height:420px;">
+    <img src="@routes.Assets.versioned("images/icon.png")">
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="@{url}">
+      </div>
+         
+      <div class="col-md-8">
+        @r match {
+          case None => { <i>There was an error in identifying this Mushroom</i> }
+          case Some(res) => {
+        <b>Identification Result</b>
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td>Assertion</td>
+              <td>@{res.status.label} </td>
+            </tr>
+
+            <tr>
+              <td>Certainty</td>
+              <td>@{res.status.confidence}</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <b>Mushroom</b>
+        @(res.result) match {
+          case None => { <i>There was an error in identifying this Mushroom</i> }
+          case Some(m) => {
+          <table class="table table-striped table-bordered">
+            <tbody>
+              <tr>
+                <td>Latin Name</td>
+                <td>@{m.latin}</td>
+              </tr>
+
+              <tr>
+                <td>Common Names</td>
+                <td>@{m.common.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Confused With</td>
+                <td>@{m.confusedWith.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Regions</td>
+                <td>@{m.regions.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Habitat</td>
+                <td>@{m.habitat}</td>
+              </tr>
+
+              <tr>
+                <td>Forms Fairy Rings?</td>
+                <td>@{m.fairyRings}</td>
+              </tr>
+
+              <tr>
+                <td>Psychoactive?</td>
+                <td>@{m.attributes.psychoactive}</td>
+              </tr>
+
+              <tr>
+                <td>Poisonous?</td>
+                <td>@{m.attributes.poisonous}</td>
+              </tr>
+              
+              <tr>
+                <td>Deadly?</td>
+                <td>@{m.attributes.deadly}</td>
+              </tr>
+
+              <tr>
+                <td>Cap</td>
+                <td>@{m.attributes.cap.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Hymenium</td>
+                <td>@{m.attributes.hymenium.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Spore Print Colours</td>
+                <td>@{m.attributes.sporePrint.mkString(", ")}</td>
+              </tr>
+
+              <tr>
+                <td>Ecology</td>
+                <td>@{m.attributes.ecology.mkString(", ")}</td>
+              </tr>
+            </tbody>
+          </table>
+          }
+          }
+          }
+          }
+
+      </div>
+}

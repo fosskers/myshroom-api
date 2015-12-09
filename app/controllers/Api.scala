@@ -6,6 +6,7 @@ import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
+import play.api.i18n._
 
 // LOCAL
 import extra.Forms._
@@ -20,14 +21,18 @@ import scala.sys.process._
 
 // --- //
 
-class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
+class Api @Inject() (
+  ws: WSClient,
+  db: ShroomDB,
+  val messagesApi: MessagesApi
+) extends Controller with I18nSupport {
 
   def fromForm = Action.async { implicit request =>
     urlForm.bindFromRequest.fold(
       formWithErrors => Future.successful(
-        BadRequest(Json.obj("error" -> "Bad image url!"))
+        Ok(views.html.index(urlForm))
       ),
-      url => sanitizedCall(url)
+      url => callNet(url).map(r => Ok(views.html.id_result(url, r)))
     )
   }
 
@@ -37,10 +42,6 @@ class Api @Inject() (ws: WSClient, db: ShroomDB) extends Controller {
    * but produces random results, so that this interaction can be tested.
    */
   def byURL(url: String) = Action.async {
-    sanitizedCall(url)
-  }
-
-  private def sanitizedCall(url: String): Future[Result] = {
     callNet(url).map({
       case None => InternalServerError(
         Json.obj("error" -> "Error processing results from Neural Net.")
