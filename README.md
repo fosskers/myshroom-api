@@ -22,9 +22,12 @@ Our model was based off of AlexNet, and was trained with
 
 - [ ] Website Extensions
   - [ ] Extend `find` call to include all parameter types
-  - [ ] On success, redirect to nice page
+  - [x] On success, redirect to nice page
   - [ ] Include reprentative images of all shrooms in `/public/images`
   - [ ] Sexy deployment (`supervisor`? `lemons`?)
+  - [ ] Create a topbar
+  - [ ] Include a *Waiver* page for legal things
+  - [ ] Incldue a *Data* page for listing the sizes of our image sets
   - [ ] Migration to Haskell
     - [ ] Go through Parallel/Concurrency book
     - [ ] Look into `servant` library
