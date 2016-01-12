@@ -11,5 +11,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /identify                   controllers.Api.byURL(url: String)
 POST    /identify                   controllers.Api.fromForm
 
+# Signing up for email notifications
+POST    /email                      controllers.Contacts.signUp
+
 GET     /latin                      controllers.Api.byLatin(latin: String)
 GET     /find                       controllers.Api.find(psycho: Option[Boolean], poison: Option[Boolean], deadly: Option[Boolean])

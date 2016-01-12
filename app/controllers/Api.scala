@@ -24,7 +24,7 @@ class Api @Inject() (
   def fromForm = Action.async { implicit request =>
     urlForm.bindFromRequest.fold(
       formWithErrors => Future.successful(
-        Ok(views.html.index(urlForm))
+        Ok(views.html.index())
       ),
       url => callNet(url).map(r => Ok(views.html.id_result(url, r)))
     )

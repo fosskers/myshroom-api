@@ -1,14 +1,57 @@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(implicit flash: Flash)
 
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>@title</title>
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <link href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")" rel="stylesheet" media="all" type="text/css"/>
-    </head>
-    <body>
-        @content
-    </body>
+  <head>
+    <title>@title</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <link href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")" rel="stylesheet" media="all" type="text/css"/>
+  </head>
+  <body>
+    @flash.get("success") match {
+      case Some(m) => { 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+          <div class="alert alert-success">
+            <center>
+              <span class="glyphicon glyphicon-ok-circle"></span>
+              @m
+            </center>
+          </div>
+        </div>
+
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+      }
+      case _ => {}
+    }
+     
+    @flash.get("error") match {
+      case Some(m) => { 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+          <div class="alert alert-danger">
+            <center><span class="glyphicon glyphicon-info-sign"></span>
+              @m
+            </center>
+          </div>
+        </div>
+
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    }
+    case _ => {}
+    }
+ 
+    @content
+  </body>
 </html>

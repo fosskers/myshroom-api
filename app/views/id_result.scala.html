@@ -1,6 +1,7 @@
-@(url: String, r: Option[IdResult])(implicit messages: Messages)
+@(url: String, r: Option[IdResult])(implicit messages: Messages, flash: Flash)
 
 @main("MyShroom - Identification Result") {
+
   <div style="margin-left:auto;margin-right:auto;width:420px;height:420px;">
     <img src="@routes.Assets.versioned("images/icon.png")">
   </div>

@@ -1,4 +1,4 @@
-@(urlF: Form[String])(implicit messages: Messages)
+@()(implicit messages: Messages, flash: Flash)
 
 @main("MyShroom - Identify a Mushroom") {
 
@@ -44,7 +44,28 @@
 
     <p>
       <i>
-        Please send feedback to
+        Want to receive updates from us? Sign up here:
+      </i>
+    </p>
+
+    <p>
+      @helper.form(action = routes.Contacts.signUp()) {
+      <div class="input-group">
+        <span class="input-group-addon">Email Address</span>
+        <input type="text" name="email" class="form-control">
+
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-info">
+            Sign Up
+          </button>
+        </span>
+      </div>
+      } 
+    </p>
+
+    <p>
+      <i>
+        Or send feedback directly to
         <a href="mailto:colingw@@gmail.com">colingw@@gmail.com</a>
       </i>
     </p>
