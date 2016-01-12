@@ -7,17 +7,6 @@ Our model was based off of AlexNet, and was trained with
 
 # TO-DO list
 
-## Initial Tasks
-
-- [x] Write Scala API
-- [x] Find mushroom pictures + name + info **NIMA**
-  - [x] Create database from specific collections on ImageNet
-  - [ ] Contact mycological societies for access to their info **NIMA**
-- [x] Learn **Caffe** and its python interface **OMAR + JESSE**
-- [x] Produce the official model once images and tags are collected
-- ~~Write Django server to serve JSON on top of X labels and confidence values based given image~~
-- [x] Report + Poster (in LaTeX) **OMAR**
-
 ## Next Steps
 
 - [ ] Website Extensions
@@ -62,3 +51,14 @@ Our model was based off of AlexNet, and was trained with
 - [Vancouver Mycological Society](http://www.vanmyco.com/)
 - [Alberta Mycologocial Society](http://www.wildmushrooms.ws/)
 - [Mycological Society of America](http://msafungi.org/)
+
+## Funding
+http://www.canadabusiness.ca/eng/program/results/sgc-59/pof-193-194-195/
+
+- (01) Canada Small Business Financing program
+- (03) Futurpreur Canada startup program
+- (04) Western Innovation initiative
+- (16) Industrial Research Assistance Program
+- (50) Scientific Research and Experimental Development Tax Incentive Program
+
+http://www.nrcan.gc.ca/forests/federal-programs/13137
