@@ -1,22 +1,16 @@
 package controllers
 
-// PLAY
+import extra.Forms._
+import javax.inject.Inject
+import models._
+import models.Mushrooms._
 import play.api.Play.current
+import play.api.i18n._
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.json._
 import play.api.libs.ws._
 import play.api.mvc._
-import play.api.i18n._
-
-// LOCAL
-import extra.Forms._
-import models._
-import models.Mushrooms._
-
-// OTHER
-import javax.inject.Inject
-import scala.concurrent.Future
-import scala.concurrent.blocking
+import scala.concurrent.{Future, blocking}
 import scala.sys.process._
 
 // --- //

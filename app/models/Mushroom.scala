@@ -1,6 +1,5 @@
 package models
 
-// PLAY
 import play.api.libs.json.Json
 
 // --- //

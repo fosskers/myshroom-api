@@ -1,18 +1,13 @@
 package controllers
 
-// PLAY
+import javax.inject.Inject
+import models.Mushroom
+import models.Mushrooms._
 import play.api.libs.json._
 import play.api.mvc.Controller
 import play.modules.reactivemongo._
 import play.modules.reactivemongo.json._
 import play.modules.reactivemongo.json.collection._
-
-// LOCAL
-import models.Mushroom
-import models.Mushrooms._
-
-// OTHER
-import javax.inject.Inject
 import reactivemongo.api.ReadPreference._
 import scala.concurrent.{ExecutionContext, Future}
 

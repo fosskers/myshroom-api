@@ -1,12 +1,9 @@
 package extra
 
-// PLAY
-import play.api.data.Forms._
-import play.api.data._
-
-// LOCAL
 import extra.Constraints._
 import models.Contact
+import play.api.data._
+import play.api.data.Forms._
 
 // --- //
 

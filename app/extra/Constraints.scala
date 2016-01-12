@@ -1,6 +1,5 @@
 package extra
 
-// PLAY
 import play.api.data.validation._
 
 // --- //
