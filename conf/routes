@@ -15,4 +15,4 @@ POST    /identify                   controllers.Api.fromForm
 POST    /email                      controllers.Contacts.signUp
 
 GET     /latin                      controllers.Api.byLatin(latin: String)
-GET     /find                       controllers.Api.find(psycho: Option[Boolean], poison: Option[Boolean], deadly: Option[Boolean])
+GET     /find                       controllers.Api.find(psycho: Option[Boolean], poison: Option[Boolean], deadly: Option[Boolean], rings: Option[Boolean], cap: Option[String], hymenium: Option[String], spores: Option[String], ecology: Option[String], region: Option[String])

@@ -12,6 +12,7 @@ import play.api.libs.ws._
 import play.api.mvc._
 import scala.concurrent.{Future, blocking}
 import scala.sys.process._
+import play.api.Logger
 
 // --- //
 
@@ -115,19 +116,32 @@ class Api @Inject() (
   def find(
     psycho: Option[Boolean],
     poison: Option[Boolean],
-    deadly: Option[Boolean]
+    deadly: Option[Boolean],
+    rings: Option[Boolean],
+    cap: Option[String],
+    hymenium: Option[String],
+    spores: Option[String],
+    ecology: Option[String],
+    region: Option[String]
   ) = Action.async {
 
     val pairs = Seq(
-      ("attributes.psychoactive", psycho),
-      ("attributes.poisonous", poison),
-      ("attributes.deadly", deadly)
+      ("attributes.psychoactive", psycho.map(JsBoolean)),
+      ("attributes.poisonous", poison.map(JsBoolean)),
+      ("attributes.deadly", deadly.map(JsBoolean)),
+      ("fairyRings", rings.map(JsBoolean)),
+      ("attributes.cap", cap.map(c => Json.obj("$in" -> Seq(c)))),
+      ("attributes.hymenium", hymenium.map(h => Json.obj("$in" -> Seq(h)))),
+      ("attributes.sporePrint", spores.map(s => Json.obj("$in" -> Seq(s)))),
+      ("attributes.ecology", ecology.map(e => Json.obj("$in" -> Seq(e)))),
+      ("regions", region.map(r => Json.obj("$in" -> Seq(r))))
     )
 
+    /* Scala's typechecker needs handholding */
     val zero: Seq[(String, JsValue)] = Seq()
     val params = pairs.foldRight(zero)({
       case ((_, None), acc) => acc
-      case ((s, Some(b)), acc) => (s -> JsBoolean(b)) +: acc
+      case ((s, Some(b)), acc) => (s -> b) +: acc
     })
 
     db.jsonQuery(JsObject(params)).map(shrooms => Ok(Json.toJson(shrooms)))
