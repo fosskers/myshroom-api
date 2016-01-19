@@ -63,6 +63,7 @@ Notes:
 
 1. `0` and `1` can be used in place of `false` and `true`.
 2. Any or all of these parameters can be mixed for specific searches.
+3. Use `limit=n`, where `n` is a number, to limit the quantity of results.
 
 #### Cap Types
 - conical
