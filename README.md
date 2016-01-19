@@ -53,11 +53,11 @@ psycho    | `true` or `false` | ...have psychoactive effects when eaten
 poison    | `true` or `false` | ...are poisonous, but not necessarily deadly
 deadly    | `true` or `false` | ...are deadly when eaten
 rings     | `true` or `false` | ...form fairy rings
-cap       | *See below*       | ...have a certain cap type?
-hymenium  | *See below*       | ...have a certain hymenium type?
-spores    | *See below*       | ...have a certain spore print colour?
-ecology   | *See below*       | ...grow in a certain way?
-region    | Country / Continent name | ...grow in a certain area on Earth?
+cap       | *See below*       | ...have a certain cap type
+hymenium  | *See below*       | ...have a certain hymenium type
+spores    | *See below*       | ...have a certain spore print colour
+ecology   | *See below*       | ...grow in a certain way
+region    | Country / Continent name | ...grow in a certain area on Earth
 
 Notes:
 
