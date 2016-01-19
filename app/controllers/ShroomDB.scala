@@ -19,11 +19,12 @@ class ShroomDB @Inject() (val reactiveMongoApi: ReactiveMongoApi)
   def collection: JSONCollection = db.collection[JSONCollection]("shrooms")
 
   def jsonQuery(
-    json: JsObject
+    json: JsObject,
+    limit: Option[Int]
   )(implicit ec: ExecutionContext): Future[Seq[Mushroom]] = {
     collection.find(json)
       .cursor[Mushroom](readPreference = nearest)
-      .collect[Seq]()
+      .collect[Seq](upTo = limit.getOrElse(Int.MaxValue))
   }
 
   /* There should only ever be one result, as Latin names are unique */
@@ -36,6 +37,6 @@ class ShroomDB @Inject() (val reactiveMongoApi: ReactiveMongoApi)
   def byLatins(
     latins: Seq[String]
   )(implicit ec: ExecutionContext): Future[Seq[Mushroom]] = {
-    jsonQuery(Json.obj("latin" -> Json.obj("$in" -> latins)))
+    jsonQuery(Json.obj("latin" -> Json.obj("$in" -> latins)), None)
   }
 }

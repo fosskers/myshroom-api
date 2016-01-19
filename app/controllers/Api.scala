@@ -122,7 +122,8 @@ class Api @Inject() (
     hymenium: Option[String],
     spores: Option[String],
     ecology: Option[String],
-    region: Option[String]
+    region: Option[String],
+    limit: Option[Int]
   ) = Action.async {
 
     val pairs = Seq(
@@ -144,6 +145,7 @@ class Api @Inject() (
       case ((s, Some(b)), acc) => (s -> b) +: acc
     })
 
-    db.jsonQuery(JsObject(params)).map(shrooms => Ok(Json.toJson(shrooms)))
+    db.jsonQuery(JsObject(params), limit)
+      .map(shrooms => Ok(Json.toJson(shrooms)))
   }
 }
