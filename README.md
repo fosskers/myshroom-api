@@ -10,7 +10,7 @@ Our model was based off of AlexNet, and was trained with
 ## Next Steps
 
 - [ ] Website Extensions
-  - [ ] Extend `find` call to include all parameter types
+  - [x] Extend `find` call to include all parameter types
   - [x] On success, redirect to nice page
   - [ ] Include reprentative images of all shrooms in `/public/images`
   - [ ] Sexy deployment (`supervisor`? `lemons`?)
