@@ -26,7 +26,7 @@
 
             <tr>
               <td>Certainty</td>
-              <td>@{res.status.confidence}</td>
+              <td>@{"%.2f%%".format(res.status.confidence * 100)}</td>
             </tr>
 
           </tbody>
