@@ -48,7 +48,7 @@ The available parameters are:
 
 Parameter | Argument | Find mushrooms that...
 --------- | -------- | ----------------------
-*none*    | *none*   | match any criteria
+*none*    | *none*   | ...match any criteria
 psycho    | `true` or `false` | ...have psychoactive effects when eaten
 poison    | `true` or `false` | ...are poisonous, but not necessarily deadly
 deadly    | `true` or `false` | ...are deadly when eaten
