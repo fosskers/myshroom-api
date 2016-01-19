@@ -5,7 +5,7 @@ MyShroom is a mushroom identification system that uses Neural Networks.
 Our model was based off of AlexNet, and was trained with
 [caffe](http://caffe.berkeleyvision.org/).
 
-# API Description
+## API Description
 
 While you can submit an image URL to [our website](http://myshroom.ca),
 you can also make calls to the `/find` endpoint to yield JSON results
@@ -48,7 +48,7 @@ The available parameters are:
 
 Parameter | Argument | Find mushrooms that...
 --------- | -------- | ----------------------
-*none*    | *none*   | *all* mushroom data
+*none*    | *none*   | match any criteria
 psycho    | `true` or `false` | ...have psychoactive effects when eaten
 poison    | `true` or `false` | ...are poisonous, but not necessarily deadly
 deadly    | `true` or `false` | ...are deadly when eaten
@@ -99,9 +99,9 @@ Notes:
 - parasitic
 - saprotrophic
 
-# TO-DO list
+## TO-DO list
 
-## Next Steps
+### Next Steps
 
 - [ ] Website Extensions
   - [x] Extend `find` call to include all parameter types
@@ -126,13 +126,13 @@ Notes:
   - [ ] Image rights?
   - [ ] Contact Mycological societies about what they would find useful
 
-# Resources
+## Resources
 
-## Papers
+### Papers
 
 - [Mushroom Recognition - Damien Matti](http://mmspg.epfl.ch/files/content/sites/mmspl/files/shared/Semesterproject_mushroomrecognition.pdf)
 
-## Mushroom Picture and Info Databases
+### Mushroom Picture and Info Databases
 
 - ImageNet
 - [Mushroom Source](http://www.mushroomsource.com/mushrooms.html)
@@ -141,14 +141,14 @@ Notes:
 - [UCI Mushroom Database](https://archive.ics.uci.edu/ml/datasets/Mushroom) - **Not actually useful**
 - [Champis (French)](http://champis.net/wiki/index.php?title=Accueil)
 
-## Mycological Societies
+### Mycological Societies
 
 - [Mycological Society of Toronto](https://www.myctor.org/)
 - [Vancouver Mycological Society](http://www.vanmyco.com/)
 - [Alberta Mycologocial Society](http://www.wildmushrooms.ws/)
 - [Mycological Society of America](http://msafungi.org/)
 
-## Funding
+### Funding
 http://www.canadabusiness.ca/eng/program/results/sgc-59/pof-193-194-195/
 
 - (01) Canada Small Business Financing program
