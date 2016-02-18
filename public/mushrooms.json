@@ -2,7 +2,7 @@
     {
         "latin": "Amanita muscaria",
         "common": ["Fly agaric", "Fly amanita"],
-        "confusedWith": ["Amanita caesarea"],
+        "confusedWith": ["Amanita caesarea", "Amanita aprica", "Amanita gemmata"],
         "regions": ["Worldwide"],
         "habitat": "Native to conifer and deciduous woodlands throughout the temperate and boreal regions of the Northern Hemisphere. It forms symbiotic relationships with many trees, including pine, spruce, fir, birch, and cedar.",
         "fairyRings": true,
@@ -11,14 +11,18 @@
             "poisonous": true,
             "deadly": false,
             "cap": ["flat", "convex"],
-            "hymenium": ["free"],
+            "cap colour": ["red to orange, shades of yellow, tan to white", "cap color can change with age, weather and growing conditions"]
+            "odor": ["faint"],
+            "flesh": ["white", "thick, firm when young, soft when old"],
+            "hymenium": ["free", "gilled", "white"],
+            "veil": ["membranous, forming a thin persistent skirt-like ring that may collapse when old],
             "sporePrint": ["white"],
             "ecology": ["mycorrhizal"]
         }
     },
     {
         "latin": "Agaricus arvensis",
-        "common": ["Horse mushroom"],
+        "common": ["Horse mushroom", "Prairie mushroom", "horse agaricus"],
         "confusedWith": ["Amanita"],
         "regions": ["Britain", "Iran", "North America"],
         "habitat": "Appearing during the months of July-November, it is frequently found near stables, as well as in meadows. It is often found growing with nettles, and sometimes associates with spruce trees.",
@@ -27,7 +31,9 @@
             "psychoactive": false,
             "poisonous": false,
             "deadly": false,
-            "cap": ["convex"],
+            "cap": ["convex"], 
+            "cap colour": ["white to dull brassy yellow with age and when bruised"],
+            "odor": ["pleasant, anise or almond-like when young", "musty smell when old"],
             "hymenium": ["free"],
             "sporePrint": ["brown", "black-brown"],
             "ecology": ["saprotrophic"]
@@ -35,7 +41,7 @@
     },
     {
         "latin": "Agaricus campestris",
-        "common": ["Field mushroom", "Meadow mushroom"],
+        "common": ["Field mushroom", "Meadow mushroom", "meadow agaricus", "common field mushroom", "pink bottom", "hot-bed mushroom", "champignon"],
         "confusedWith": ["Amanita bisporigera"],
         "regions": ["Asia", "Europe", "Northern Africa", "Australia", "New Zealand", "North America"],
         "habitat": "Common in fields and grassy areas after rain from late summer onwards worldwide. It is often found on lawns in suburban areas",
@@ -45,6 +51,8 @@
             "poisonous": false,
             "deadly": false,
             "cap": ["convex", "flat"],
+            "cap colour": ["Pure white or sometimes with grayish to brown or cinnamon fibrils"],
+            "odor": ["mild"],
             "hymenium": ["free"],
             "sporePrint": ["brown"],
             "ecology": ["saprotrophic"]
@@ -69,7 +77,7 @@
     },
     {
         "latin": "Flammulina velutipes",
-        "common": ["Enoki", "Enokitake", "Enokidake", "Golden needle mushroom", "Lily mushroom"],
+        "common": ["Enoki", "Enokitake", "Enokidake", "Golden needle mushroom", "Lily mushroom", "Velvet foot", "Velvet stalk", "Winter mushroom", "Velvet shank"],
         "confusedWith": [],
         "regions": ["Asia", "Europe", "North America"],
         "habitat": "The mushroom naturally grows on the stumps of the Chinese Hackberry tree, but also on other trees, such as mulberry and persimmon trees.",
